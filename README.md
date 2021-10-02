@@ -12,3 +12,8 @@ To install it on other projects, add this to the csproj:
   <DotNetCliToolReference Include="nksoft.MakeGenericAgain" Version="1.0.0" />
 </ItemGroup>
 ```
+
+To run int use
+```
+ MakeGenericAgain.exe -f "C:\Path\client.cs"
+```
