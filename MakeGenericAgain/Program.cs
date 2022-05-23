@@ -20,7 +20,7 @@ namespace MakeGenericAgain
             {
                 if (string.IsNullOrEmpty(options.FileName) || !File.Exists(options.FileName))
                 {
-                    return Return(ExitCode.InvalidFilename, "Error Filename {options.FileName} is invalid or not existing");
+                    return Return(ExitCode.InvalidFilename, $"Error Filename '{options.FileName}' is invalid or not existing");
                 }
 
                 var lines = File.ReadAllLines(options.FileName);

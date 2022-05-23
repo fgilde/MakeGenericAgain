@@ -24,7 +24,7 @@ namespace MakeGenericAgain
                     if (indexOf >= 0)
                     {
                         var rest = args.Substring(indexOf + name.Length);
-                        var end = rest.IndexOf("-");
+                        var end = rest.IndexOf(" ");
                         end = end > 0 ? end : rest.Length;
                         var value = rest.Substring(0, end).Trim().Replace("\"", "");
                         prop.SetValue(res, value);

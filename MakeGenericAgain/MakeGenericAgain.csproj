@@ -6,7 +6,31 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>makeGenericAgain</ToolCommandName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <Authors>Florian Gilde</Authors>
+    <PackageId>MakeGenericAgain</PackageId>
+    <PackageVersion>0.0.0-dev</PackageVersion>
+    <RepositoryType>Git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>
+      Problem is that nswag client code generation from open api specification or swagger generates classes without generics. This tool can be used afterwards to make classes generic again
+    </Description>
+    
+    <RepositoryUrl>https://github.com/fgilde/MakeGenericAgain</RepositoryUrl>
+    <Copyright>Copyright © $(Authors) 2020-$([System.DateTime]::Now.Year)</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.231">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="README.md" />
+  </ItemGroup>
 
 </Project>
