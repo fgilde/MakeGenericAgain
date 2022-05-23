@@ -19,3 +19,9 @@ To run int use
 ```
  makeGenericAgain -f "C:\Path\client.cs"
 ```
+
+
+## Links
+[Github Repository](https://github.com/fgilde/MakeGenericAgain) | 
+[Nuget Package](https://www.nuget.org/packages/MakeGenericAgain/)
+#
