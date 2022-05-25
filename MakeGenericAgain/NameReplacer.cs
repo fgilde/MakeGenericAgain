@@ -13,7 +13,7 @@ namespace MakeGenericAgain
             var toSplit = Regex.Replace(str, @"[^\w\.@-]", " ", RegexOptions.None, TimeSpan.FromSeconds(1.5)).Replace(".", " ");
             foreach (var word in toSplit.Split(" "))
             {
-                if (word.Contains("Of") && !word.StartsWith("Of") && !word.EndsWith("Of"))
+                if (word.Contains("Of") && !word.StartsWith("Of") && !word.EndsWith("Of") && !word.StartsWith("DateTime"))
                 {
                     var genericWordFor = GetGenericWordFor(word);
                     if (word != genericWordFor)
