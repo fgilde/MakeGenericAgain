@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using System.Reflection;
 
@@ -27,7 +28,15 @@ namespace MakeGenericAgain
                         var end = rest.IndexOf(" ");
                         end = end > 0 ? end : rest.Length;
                         var value = rest.Substring(0, end).Trim().Replace("\"", "");
-                        prop.SetValue(res, value);
+                        if (IsCollection(prop))
+                        {
+                            var values = value.Replace(" ", string.Empty).Split(',');
+                            prop.SetValue(res, values);
+                        }
+                        else
+                        {
+                            prop.SetValue(res, value);
+                        }
                     }
                 }
             }
@@ -39,6 +48,11 @@ namespace MakeGenericAgain
             if (!str.StartsWith(toStartWith))
                 str = toStartWith + str;
             return str;
+        }
+
+        private static bool IsCollection(PropertyInfo prop)
+        {
+            return prop.PropertyType != typeof(string) && typeof(ICollection).IsAssignableFrom(prop.PropertyType);
         }
     }
 }

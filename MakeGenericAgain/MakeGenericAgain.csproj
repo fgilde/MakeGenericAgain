@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
+	<LangVersion>latest</LangVersion>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>makeGenericAgain</ToolCommandName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
-    <Version>1.0.3</Version>
-    <Authors>Florian Gilde</Authors>
+    <Version>1.0.4</Version>
+    <Authors>Florian Gilde,Ian Tabron</Authors>
     <PackageId>MakeGenericAgain</PackageId>
     <PackageVersion>0.0.0-dev</PackageVersion>
     <RepositoryType>Git</RepositoryType>
