@@ -28,7 +28,7 @@ namespace MakeGenericAgain
                         var end = rest.IndexOf(" ");
                         end = end > 0 ? end : rest.Length;
                         var value = rest.Substring(0, end).Trim().Replace("\"", "");
-                        if (IsEnumerable(prop))
+                        if (IsCollection(prop))
                         {
                             var values = value.Replace(" ", string.Empty).Split(',');
                             prop.SetValue(res, values);
@@ -50,9 +50,9 @@ namespace MakeGenericAgain
             return str;
         }
 
-        private static bool IsEnumerable(PropertyInfo prop)
+        private static bool IsCollection(PropertyInfo prop)
         {
-            return prop.PropertyType != typeof(string) && typeof(IEnumerable).IsAssignableFrom(prop.PropertyType);
+            return prop.PropertyType != typeof(string) && typeof(ICollection).IsAssignableFrom(prop.PropertyType);
         }
     }
 }

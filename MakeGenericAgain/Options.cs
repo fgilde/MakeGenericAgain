@@ -8,6 +8,6 @@ namespace MakeGenericAgain
         public string FileName { get; set; }
 
         [FromCommandLine("i", nameof(TypesToIgnore))]
-        public List<string> TypesToIgnore { get; set; }
+        public ICollection<string> TypesToIgnore { get; set; } = [];
     }
 }
