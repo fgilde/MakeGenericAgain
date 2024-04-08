@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -8,11 +7,15 @@ namespace MakeGenericAgain
 {
     public static class NameReplacer
     {
-        public static string ReplaceToGeneric(string str)
+        public static string ReplaceToGeneric(string str, ICollection<string> typesToIgnore)
         {
             var toSplit = Regex.Replace(str, @"[^\w\.@-]", " ", RegexOptions.None, TimeSpan.FromSeconds(1.5)).Replace(".", " ");
             foreach (var word in toSplit.Split(" "))
             {
+                // ignore any types provided in options
+                if (typesToIgnore.Contains(word))
+                    continue;
+
                 if (word.Contains("Of") && !word.StartsWith("Of") && !word.EndsWith("Of") && !word.StartsWith("DateTime"))
                 {
                     var genericWordFor = GetGenericWordFor(word);
