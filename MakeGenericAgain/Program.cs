@@ -26,7 +26,7 @@ namespace MakeGenericAgain
                 var lines = File.ReadAllLines(options.FileName);
                 for (var index = 0; index < lines.Length; index++)
                 {
-                    lines[index] = NameReplacer.ReplaceToGeneric(lines[index]);
+                    lines[index] = NameReplacer.ReplaceToGeneric(lines[index], options.TypesToIgnore);
                 }
                 File.WriteAllLines(options.FileName, lines);
                 return Return(ExitCode.Success, $"Filename {options.FileName} has successfully been updated");
