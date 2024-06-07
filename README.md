@@ -35,6 +35,12 @@ Or with ignorable type names
  makeGenericAgain -f "C:\Path\client.cs" -i "IgnorableOfType,AnotherOfIgnorable"
 ```
 
+Also you can specify specific output file with -o
+```
+ makeGenericAgain -f "C:\Path\client.cs" -i "IgnorableOfType,AnotherOfIgnorable" -o "C:\Path\client_with_generics.cs"
+```
+
+
 
 ## Links
 [Github Repository](https://github.com/fgilde/MakeGenericAgain) | 

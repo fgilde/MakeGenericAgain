@@ -2,7 +2,7 @@
   "profiles": {
     "MakeGenericAgain": {
       "commandName": "Project",
-      "commandLineArgs": "-f \"C:\\dev\\privat\\github\\CleanArchitectureBaseBlazor\\src\\SDK\\Net\\v1\\ClientGenerated.cs\""
+      "commandLineArgs": "-f \"D:\\dev\\privat\\github\\CleanArchitectureBaseBlazor\\src\\SDK\\Net\\v1\\ClientGenerated.cs\" -i \"UnitOfMeasure, FileOfThat\"  "
     }
   }
 }

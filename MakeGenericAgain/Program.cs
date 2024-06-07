@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace MakeGenericAgain
 {
@@ -28,7 +26,7 @@ namespace MakeGenericAgain
                 {
                     lines[index] = NameReplacer.ReplaceToGeneric(lines[index], options.TypesToIgnore);
                 }
-                File.WriteAllLines(options.FileName, lines);
+                File.WriteAllLines(options.OutputFileName ?? options.FileName, lines);
                 return Return(ExitCode.Success, $"Filename {options.FileName} has successfully been updated");
             }
             catch (Exception e)
